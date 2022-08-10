@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block title %}JobsCraper - Home{% endblock %}
+
+{% block searchresulttitle %}
+<p><h3><center><strong>Total Listings</strong></center></h3></p>
+{% endblock %}
+
+<!-- {% block inputjob %}
+<p class="control has-icons-left">
+<input class="input is-small is-focused has-background-white-ter has-text-black-bis" name ="job" id="job" type="text" placeholder="Job Title, Keyword or Company" required autocomplete="off">
+<span class="icon is-small is-left">
+<i class="fa fa-briefcase"></i>
+</span>
+</p>
+{% endblock %} -->
+
+{% block joblocsearch %}
+<form method="post">
+
+	<div class="columns is-centered">
+		<div class="column is-4">
+				<p class="control has-icons-left">
+				<input class="input is-small is-focused has-background-white-ter has-text-black-bis" name ="job" id="job" type="text" placeholder="Job Title, Keyword or Company" autocomplete="off">
+				<span class="icon is-small is-left">
+				<i class="fa fa-briefcase"></i>
+				</span>
+					</p>
+			<div class="columns is-4 pt-4">
+				<div class="column">
+						<p class="control has-icons-left">
+						<input class="input is-small is-focused has-background-white-ter has-text-black-bis" name ="loc" id="loc" type="text" placeholder="Area, City or Town" autocomplete="off">
+						<span class="icon is-small is-left">
+						<i class="fa fa-location-arrow"></i>
+						</span>
+						</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="buttons is-centered">
+		<button class="button is-success" type="submit" id="search" name="search">Search</button>
+		<button class="button is-danger" type="reset">Reset</button> 
+	</div>
+
+</form>
+{% endblock %}
+        
+            
+<!-- {% block inputloc %}
+<p class="control has-icons-left">
+<input class="input is-small is-focused has-background-white-ter has-text-black-bis" name ="loc" id="loc" type="text" placeholder="Area, City or Town" required autocomplete="off">
+<span class="icon is-small is-left">
+<i class="fa fa-location-arrow"></i>
+</span>
+</p>
+{% endblock %} -->
+
+<!-- {% block searchbutton %}
+<div class="buttons is-centered">
+<button class="button is-success" type="submit" id="search" name="search">Search</button>
+<button class="button is-danger" type="reset">Reset</button> 
+</div>
+{% endblock %} -->
+

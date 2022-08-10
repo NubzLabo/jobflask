@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}JobsCraper - Search Result{% endblock %}
+
+
+{% block searchresulttitle %}
+<p><h3><center><strong>Search Results</strong></center></h3></p>
+{% endblock %}
+
+{% block searchresult %}
+<div class="content is-small" id="search_keyword">
+{% if exc %}
+<p><h3><i><center>You searched for <span style="color:darkred"><b>{{job}}</b></span> jobs in <span style="color:darkred"><b>{{loc}}</b></span>.</center></i></h3></p>
+<p><center><a style="font-size:18px;" href="{{ url_for('home')}}"><b>Search again?</b></a></center></p>
+{% else %}
+<p><h3><i><center>Your search for <span style="color:darkred"><b>{{job}}</b></span> jobs in <span style="color:darkred"><b>{{loc}}</b></span> yields no results.</center></i></h3></p>
+<p><center><a style="font-size:18px;" href="{{ url_for('home')}}"><b>Search again?</b></a></center></p>
+{% endif %}
+</div>
+{% endblock %}
+
+
+{% block pageexport %}
+<form method="post" action="/final_result">
+
+  {% if exc %}
+      <p><center><b>Please select from page 1 to&nbsp;
+        <input class="input is-small is-focused has-background-white-ter has-text-black-bis" style="width: 60px;height:30px;" name="page" id="page" type="number" placeholder="Page" min="1" max={{maxpage}} autocomplete="off" required>
+        &nbsp;to return the results</b></center></p>
+  {% endif %}
+
+  <div class="buttons is-centered pt-5 pb-1">
+    {% if exc %}
+    <button class="button is-success" type="submit" id="return" name="return">Submit</button>
+    {% endif %}
+  </div>
+
+</form>
+{% endblock %}
+
+<!-- {% block inputpage %}
+<input class="input is-small is-focused has-background-white-ter has-text-black-bis" name ="page" id="page" type="number" placeholder="Page" min="1" max={{page}} required>
+{% endblock %}
+
+{% block exportbutton %}
+<div class="buttons is-centered">
+  <button class="button is-success" type="submit" id="save" name="search">Save</button>
+</div>
+{% endblock %} -->
+
+
